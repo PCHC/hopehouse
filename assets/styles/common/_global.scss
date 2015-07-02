@@ -1,1 +1,55 @@
+.navbar-brand {
+  position: absolute;
+  padding: 20px 30px;
+  margin-top: -10px;
+  height: auto;
+  border-radius: 50%;
+  background: #FFF;
+  transition: all 0.1s ease-out;
+  @include BoxShadowHelper(2);
 
+  > img {
+    height: 100px;
+  }
+
+  &:hover {
+    .navbar-default & {
+      background: #FFF;
+      @include BoxShadowHelper(3);
+    }
+  }
+}
+
+.hp-section {
+  min-height: 800px;
+  position: relative;
+  z-index: 20;
+  padding-bottom: 40px;
+  @include BoxShadowHelper(2);
+
+  h2 {
+    font-size: 72px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 160px;
+  }
+}
+
+.hp-section-hlc, .hp-section-shelter, .hp-section-housing {
+  color: #FFF;
+}
+
+.hp-section-hlc {
+  background: $color-hlc;
+  z-index: 19;
+}
+
+.hp-section-shelter {
+  background: $color-shelter;
+  z-index: 18;
+}
+
+.hp-section-housing {
+  background: $color-housing;
+  z-index: 17;
+}
