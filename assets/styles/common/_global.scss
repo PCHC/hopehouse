@@ -9,7 +9,7 @@
   height: auto;
   border-radius: 50%;
   background: #FFF;
-  transition: all 0.1s ease-out;
+  transition: all $transition-timing $transition-easing;
   @include BoxShadowHelper(2);
 
   > img {
@@ -24,27 +24,66 @@
   }
 }
 
+.navbar-nav {
+  > li {
+    > a {
+      font-size: 20px;
+      text-transform: uppercase;
+      transition: color $transition-timing $transition-easing;
+
+      @media (min-width: $screen-sm-min) {
+
+      }
+
+      .navbar-default & {
+        color: $brand-primary;
+
+        &:hover {
+          color: $color-hlc;
+        }
+      }
+    }
+  }
+}
+
 .hp-section {
   min-height: 400px;
   position: relative;
   z-index: 20;
   @include BoxShadowHelper(2);
 
-  h2 {
-    font-size: 72px;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    padding-top: 160px;
+  .hp-section-image {
+    max-width: 100%;
+    border: 2px solid #FFF;
+    @include BoxShadowHelper(2);
+  }
+
+  .content {
+    padding-bottom: 80px;
   }
 }
 
 .hp-section-hlc, .hp-section-shelter, .hp-section-housing {
   color: #FFF;
+  font-size: 1.75em;
+
+  h2 {
+    //text-transform: uppercase;
+    //letter-spacing: -1px;
+    padding-top: 160px;
+    font-size: 3.75em;
+    font-family: "Alex Brush";
+    font-weight: 400;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
 }
 
 .hp-section-hero {
   background: url(../../assets/images/hh-hero.jpg) 50% 50% no-repeat;
   background-size: cover;
+  .content {
+
+  }
 
   .hp-section-hero-wrap {
     position: absolute;
@@ -53,6 +92,49 @@
     bottom: 0;
     left: 0;
     background: rgba(#FFF, 0.5);
+  }
+
+  .hp-section-hero-content {
+    position: absolute;
+    left: 33%;
+    bottom: 33%;
+    width: 50%;
+    transform: translate(-50%, 50%);
+
+    color: $brand-primary;
+    font-size: 2.6em;
+    line-height: 1.2;
+    text-align: center;
+
+    p {
+      text-align: left;
+    }
+
+    .hp-section-hero-button {
+      display: inline-block;
+      margin: 0 auto;
+      font-size: 0.7em;
+      padding: 0.5em 1em;
+      color: #FFF;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      background: $color-hlc;
+      border-radius: 3px;
+      transition: all $transition-timing $transition-easing;
+      @include BoxShadowHelper(2);
+
+      &:hover {
+        background: lighten($color-hlc, 7%);
+        text-decoration: none;
+        transform: translateY(-2px);
+        @include BoxShadowHelper(3);
+      }
+
+      &:focus {
+        text-decoration: none;
+        background: ligten($color-hlc, 14%);
+      }
+    }
   }
 }
 

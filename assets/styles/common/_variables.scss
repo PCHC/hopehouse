@@ -6,7 +6,7 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary:         #1a237e;
 $color-hlc:             #004d40;
 $color-shelter:         #d32f2f;
 $color-housing:         #827717;
@@ -19,3 +19,6 @@ $navbar-default-border: none;
 // Fonts
 $font-family-sans-serif:  "Roboto Condensed", "Helvetica Neue", Helvetica, sans-serif;
 $headings-font-weight:    700;
+
+$transition-timing:     0.15s;
+$transition-easing:     ease-out;
