@@ -58,12 +58,16 @@
     @include BoxShadowHelper(2);
   }
 
+  iframe {
+    max-width: 100%;
+  }
+
   .content {
     padding-bottom: 80px;
   }
 }
 
-.hp-section-hlc, .hp-section-shelter, .hp-section-housing {
+.hp-section-hlc, .hp-section-shelter, .hp-section-housing, .hp-section-contact {
   color: #FFF;
   font-size: 1.75em;
 
@@ -139,16 +143,35 @@
 }
 
 .hp-section-hlc {
-  background: $color-hlc;
+  background: url(../../assets/images/hh-hlc-hero.jpg) 50% 50% no-repeat;
+  background-size: cover;
   z-index: 19;
 }
+  .hp-section-hlc-wrap {
+    background: rgba($color-hlc, 0.8);
+  }
 
 .hp-section-shelter {
-  background: $color-shelter;
+  background: url(../../assets/images/hh-shelter-hero.jpg) 50% 50% no-repeat;
+  background-size: cover;
   z-index: 18;
 }
 
+  .hp-section-shelter-wrap {
+    background: rgba($color-shelter, 0.8);
+  }
+
 .hp-section-housing {
-  background: $color-housing;
+  background: url(../../assets/images/hh-housing-hero.jpg) 50% 50% no-repeat;
+  background-size: cover;
   z-index: 17;
+}
+
+  .hp-section-housing-wrap {
+    background: rgba($color-housing, 0.8);
+  }
+
+.hp-section-contact {
+  background: #eceff1;
+  color: #424242;
 }
