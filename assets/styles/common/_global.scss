@@ -1,3 +1,7 @@
+.navbar-default {
+  @include BoxShadowHelper(2);
+}
+
 .navbar-brand {
   position: absolute;
   padding: 20px 30px;
@@ -21,10 +25,9 @@
 }
 
 .hp-section {
-  min-height: 800px;
+  min-height: 400px;
   position: relative;
   z-index: 20;
-  padding-bottom: 40px;
   @include BoxShadowHelper(2);
 
   h2 {
@@ -37,6 +40,20 @@
 
 .hp-section-hlc, .hp-section-shelter, .hp-section-housing {
   color: #FFF;
+}
+
+.hp-section-hero {
+  background: url(../../assets/images/hh-hero.jpg) 50% 50% no-repeat;
+  background-size: cover;
+
+  .hp-section-hero-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(#FFF, 0.5);
+  }
 }
 
 .hp-section-hlc {
