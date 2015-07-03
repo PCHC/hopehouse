@@ -19,7 +19,7 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-        $('.hp-section-hero').height( $(window).height() );
+        $('.hp-section-hero, .hp-section-wrap').css( 'min-height', $(window).height() );
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
