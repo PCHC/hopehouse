@@ -1,3 +1,7 @@
+body {
+  background: #FF0 !important;
+}
+
 .navbar-default {
   @include BoxShadowHelper(2);
 }
