@@ -1,0 +1,56 @@
+.navbar-default {
+  @include BoxShadowHelper(2);
+
+  .admin-bar & {
+    top: 32px !important;
+  }
+}
+
+.navbar-brand {
+  position: absolute;
+  padding: 20px 30px;
+  margin-top: -10px;
+  height: auto;
+  border-radius: 50%;
+  background: #FFF;
+  transition: all $transition-timing $transition-easing;
+  @include BoxShadowHelper(2);
+
+  > img {
+    height: 100px;
+  }
+
+  &:hover {
+    .navbar-default & {
+      background: #FFF;
+      @include BoxShadowHelper(3);
+    }
+  }
+}
+
+.navbar-default .nav {
+  > li {
+    > a {
+      font-size: 20px;
+      text-transform: uppercase;
+      transition: color $transition-timing $transition-easing;
+
+      @media (min-width: $screen-sm-min) {
+
+      }
+
+      .navbar-default & {
+        color: $brand-primary;
+
+        &:hover {
+          color: $color-hlc;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    float: right!important;
+    margin-right: -15px;
+  }
+}

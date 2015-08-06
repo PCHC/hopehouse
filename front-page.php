@@ -1,14 +1,33 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<?php
+// WP_Query arguments
+$args = array (
+	'pagename'               => array(
+    'health-and-living-center',
+    'transitional-housing',
+    'shelter',
+    'contact'
+  ),
+	'post_type'              => array( 'page' ),
+);
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
+// The Query
+$query = new WP_Query( $args );
+
+// The Loop
+if ( $query->have_posts() ) : ?>
+	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+    <div class="wrap container" role="document">
+      <div class="content row">
+        <main class="main" role="main">
+      		<?php get_template_part('templates/content', 'frontpage'); ?>
+        </main><!-- /.main -->
+      </div><!-- /.content -->
+    </div><!-- /.wrap -->
+	<?php endwhile; ?>
 <?php endif; ?>
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-<?php endwhile; ?>
-
-<?php the_posts_navigation(); ?>
+<?php
+the_posts_navigation();
+// Restore original Post Data
+wp_reset_postdata();
+?>
