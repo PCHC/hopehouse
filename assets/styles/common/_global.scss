@@ -24,7 +24,7 @@
   }
 }
 
-.navbar-nav {
+.navbar-default .nav {
   > li {
     > a {
       font-size: 20px;
@@ -43,6 +43,11 @@
         }
       }
     }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    float: right!important;
+    margin-right: -15px;
   }
 }
 

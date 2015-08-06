@@ -25,6 +25,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost/~comman/hopehouse/"
+    "devUrl": "http://localhost:8888/hopehouse/"
   }
 }
