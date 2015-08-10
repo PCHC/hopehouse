@@ -4,6 +4,8 @@ $post_array = (WP_ENV == 'development') ? array( 10, 15, 16, 17 ) : array( 4, 6,
 $args = array (
 	'post__in'               => $post_array,
 	'post_type'              => array( 'page' ),
+	'order'                  => 'ASC',
+	'orderby'                => 'menu_order',
 );
 
 // The Query
