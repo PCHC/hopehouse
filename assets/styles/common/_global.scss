@@ -1,5 +1,5 @@
 body {
-  margin-top: 100px;
+  //margin-top: 100px;
 }
 
 .hp-section {
@@ -23,9 +23,11 @@ body {
   }
 }
 
-.hp-section-hlc, .hp-section-shelter, .hp-section-housing, .hp-section-contact {
+.hp-section {
   color: #FFF;
   font-size: 1.75em;
+  background-size: cover;
+  background-position: center center;
 
   h2 {
     //text-transform: uppercase;
@@ -35,6 +37,32 @@ body {
     font-family: "Alex Brush";
     font-weight: 400;
     text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  .hp-section-button {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    color: $brand-primary;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    background: $grey-200;
+    border-radius: 3px;
+    transition: all $transition-timing $transition-easing;
+    @include BoxShadowHelper(2);
+
+    &:hover {
+      background: $grey-50;
+      text-decoration: none;
+      transform: translateY(-2px);
+      @include BoxShadowHelper(3);
+    }
+
+    &:focus {
+      text-decoration: none;
+      background: #FFF;
+    }
   }
 }
 
@@ -69,32 +97,6 @@ body {
     p {
       text-align: left;
     }
-
-    .hp-section-hero-button {
-      display: inline-block;
-      margin: 0 auto;
-      font-size: 0.7em;
-      padding: 0.5em 1em;
-      color: #FFF;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      background: $color-hlc;
-      border-radius: 3px;
-      transition: all $transition-timing $transition-easing;
-      @include BoxShadowHelper(2);
-
-      &:hover {
-        background: lighten($color-hlc, 7%);
-        text-decoration: none;
-        transform: translateY(-2px);
-        @include BoxShadowHelper(3);
-      }
-
-      &:focus {
-        text-decoration: none;
-        background: ligten($color-hlc, 14%);
-      }
-    }
   }
 }
 
@@ -127,7 +129,7 @@ body {
     background: rgba($color-housing, 0.8);
   }
 
-.hp-section-contact {
+.hp-section#contact {
   background: #eceff1;
   color: #424242;
 }
