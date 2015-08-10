@@ -31,3 +31,17 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+add_filter( 'nav_menu_link_attributes', __NAMESPACE__ . '\\main_menu_links', 10, 3 );
+
+/**
+ * Replace permalink slug with #anchor on homepage
+ */
+function main_menu_links( $atts, $item, $args ) {
+    if( is_front_page() ) {
+      $pattern = "/([^\/]+(?=\/$|$))(\/)/i";
+      $replacement = "#$1";
+      $atts['href'] = preg_replace($pattern, $replacement, $atts['href']);
+    }
+    return $atts;
+}
