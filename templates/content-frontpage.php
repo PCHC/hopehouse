@@ -26,7 +26,7 @@
             )); ?>
           </div>
           <div class="col-sm-7 col-sm-pull-5">
-            <?php if( !empty( get_field('intro') ) ) : ?>
+            <?php if( get_field('intro') ) : ?>
               <?php the_field('intro'); ?>
               <a href="<?php the_permalink(); ?>" class="hp-section-button">Learn More</a>
             <?php else : ?>
