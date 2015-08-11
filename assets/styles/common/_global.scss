@@ -23,6 +23,15 @@ body {
   }
 }
 
+h1 {
+  //text-transform: uppercase;
+  //letter-spacing: -1px;
+  font-size: 3.75em;
+  font-family: "Alex Brush";
+  font-weight: 400;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
 .hp-section {
   color: #FFF;
   font-size: 1.75em;
@@ -30,13 +39,9 @@ body {
   background-position: center center;
 
   h2 {
-    //text-transform: uppercase;
-    //letter-spacing: -1px;
-    padding-top: 160px;
+    @extend h1;
     font-size: 3.75em;
-    font-family: "Alex Brush";
-    font-weight: 400;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding-top: 160px;
   }
 
   .hp-section-button {
