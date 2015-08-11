@@ -2,35 +2,37 @@
   .main {
     font-size: 1.25em;
   }
-}
 
-.page-custom-bg-wrap {}
-.page-custom-bg {
-  min-height: 300px;
-  position: relative;
-  z-index: -1;
+  .page-custom-bg-wrap {}
+  .page-custom-bg {
+    min-height: 300px;
+    position: relative;
+    z-index: -1;
 
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-  @include BoxShadowHelper(2);
-}
-.page-custom-bg-color {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+    @include BoxShadowHelper(2);
+  }
+  .page-custom-bg-color {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 
-.page-header {
-  .page-custom-bg-wrap & {
-    margin-top: -100px;
-    color: #FFF;
+  .page-header {
+    margin-top: 150px;
     border-bottom: none;
     margin-bottom: 40px;
     padding: 0;
+  }
+
+  .page-custom-bg-wrap .page-header {
+    margin-top: -100px;
+    color: #FFF;
   }
 }

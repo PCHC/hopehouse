@@ -21,9 +21,16 @@
         </header>
         <div class="entry-content">
           <div class="col-sm-4 col-sm-push-7 col-sm-offset-1">
-            <?php the_post_thumbnail( 'medium', array(
-              'class'  =>  'hp-section-image'
-            )); ?>
+            <?php if( $post->post_name == 'contact' ) : ?>
+              <?php
+                $the_map = get_field( 'map' );
+                echo html_entity_decode($the_map);
+              ?>
+            <?php else : ?>
+              <?php the_post_thumbnail( 'medium', array(
+                'class'  =>  'hp-section-image'
+              )); ?>
+            <?php endif; ?>
           </div>
           <div class="col-sm-7 col-sm-pull-5">
             <?php if( get_field('intro') ) : ?>

@@ -138,3 +138,31 @@ h1 {
   background: #eceff1;
   color: #424242;
 }
+
+@mixin MainLinkStyle($color, $amount: 25%){
+  $color-light: mix($color, #FFF, $amount);
+  cursor: pointer;
+  border-bottom: 1px solid $color-light;
+  box-shadow: inset 0 -4px 0 $color-light;
+  color: inherit;
+  transition: background .15s cubic-bezier(.33,.66,.66,1);
+
+  &:hover, &:focus, &:active {
+    background: $color-light;
+    text-decoration: none;
+  }
+}
+
+.main a {
+  @include MainLinkStyle($brand-primary);
+
+  .health-and-living-center & {
+    @include MainLinkStyle($color-hlc);
+  }
+  .transitional-housing & {
+    @include MainLinkStyle($color-housing);
+  }
+  .shelter & {
+    @include MainLinkStyle($color-shelter);
+  }
+}
