@@ -5,7 +5,7 @@
 
   .page-custom-bg-wrap {}
   .page-custom-bg {
-    min-height: 300px;
+    min-height: 240px;
     position: relative;
     z-index: -1;
 
@@ -14,6 +14,10 @@
     background-repeat: no-repeat;
 
     @include BoxShadowHelper(2);
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 300px;
+    }
   }
   .page-custom-bg-color {
     position: absolute;
@@ -32,7 +36,10 @@
   }
 
   .page-custom-bg-wrap .page-header {
-    margin-top: -100px;
+    margin-top: -125px;
     color: #FFF;
+    @media (min-width: $screen-sm-min) {
+      margin-top: -100px;
+    }
   }
 }

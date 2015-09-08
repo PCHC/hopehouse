@@ -1,8 +1,13 @@
 .navbar-default {
+  background: #FFF;
   @include BoxShadowHelper(2);
 
   .admin-bar & {
     top: 32px !important;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    background: rgba(#FFF, 0.9);
   }
 }
 
@@ -52,5 +57,12 @@
   @media (min-width: $screen-sm-min) {
     float: right!important;
     margin-right: -15px;
+  }
+}
+
+.navbar-collapse {
+  margin-top: 35px;
+  @media (min-width: $screen-sm-min) {
+    margin-top: 0;
   }
 }

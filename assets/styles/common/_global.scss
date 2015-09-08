@@ -26,10 +26,14 @@ body {
 h1 {
   //text-transform: uppercase;
   //letter-spacing: -1px;
-  font-size: 3.75em;
+  font-size: 2.5em;
   font-family: "Alex Brush";
   font-weight: 400;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.75em;
+  }
 }
 
 .hp-section {
@@ -40,7 +44,6 @@ h1 {
 
   h2 {
     @extend h1;
-    font-size: 3.75em;
     padding-top: 160px;
   }
 
@@ -137,6 +140,10 @@ h1 {
 .hp-section#contact {
   background: #eceff1;
   color: #424242;
+}
+
+.fb_iframe_widget {
+  margin: 1em 0;
 }
 
 @mixin MainLinkStyle($color, $amount: 25%){
