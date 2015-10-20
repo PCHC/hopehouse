@@ -1,0 +1,30 @@
+<?php
+// WP_Query arguments
+$post_array = (WP_ENV == 'development') ? array( 10, 15, 16, 17 ) : array( 4, 6, 8, 10 );
+$args = array (
+	'post__in'               => $post_array,
+	'post_type'              => array( 'page' ),
+	'order'                  => 'ASC',
+	'orderby'                => 'menu_order',
+);
+
+// The Query
+$query = new WP_Query( $args );
+
+// The Loop
+if ( $query->have_posts() ) : ?>
+	<div class="wrap" role="document">
+		<main role="main">
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				<?php get_template_part('templates/content', 'frontpage'); ?>
+			<?php endwhile; ?>
+		</main><!-- /.main -->
+	</div><!-- /.wrap -->
+<?php endif; ?>
+
+<?php
+the_posts_navigation();
+// Restore original Post Data
+wp_reset_postdata();
+
+?>

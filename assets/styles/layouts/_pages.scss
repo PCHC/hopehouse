@@ -1,0 +1,45 @@
+.page {
+  .main {
+    font-size: 1.25em;
+  }
+
+  .page-custom-bg-wrap {}
+  .page-custom-bg {
+    min-height: 240px;
+    position: relative;
+    z-index: -1;
+
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include BoxShadowHelper(2);
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 300px;
+    }
+  }
+  .page-custom-bg-color {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .page-header {
+    margin-top: 150px;
+    border-bottom: none;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+
+  .page-custom-bg-wrap .page-header {
+    margin-top: -125px;
+    color: #FFF;
+    @media (min-width: $screen-sm-min) {
+      margin-top: -100px;
+    }
+  }
+}

@@ -1,49 +1,5 @@
-.navbar-default {
-  @include BoxShadowHelper(2);
-}
-
-.navbar-brand {
-  position: absolute;
-  padding: 20px 30px;
-  margin-top: -10px;
-  height: auto;
-  border-radius: 50%;
-  background: #FFF;
-  transition: all $transition-timing $transition-easing;
-  @include BoxShadowHelper(2);
-
-  > img {
-    height: 100px;
-  }
-
-  &:hover {
-    .navbar-default & {
-      background: #FFF;
-      @include BoxShadowHelper(3);
-    }
-  }
-}
-
-.navbar-nav {
-  > li {
-    > a {
-      font-size: 20px;
-      text-transform: uppercase;
-      transition: color $transition-timing $transition-easing;
-
-      @media (min-width: $screen-sm-min) {
-
-      }
-
-      .navbar-default & {
-        color: $brand-primary;
-
-        &:hover {
-          color: $color-hlc;
-        }
-      }
-    }
-  }
+body {
+  //margin-top: 100px;
 }
 
 .hp-section {
@@ -67,18 +23,54 @@
   }
 }
 
-.hp-section-hlc, .hp-section-shelter, .hp-section-housing, .hp-section-contact {
+h1 {
+  //text-transform: uppercase;
+  //letter-spacing: -1px;
+  font-size: 2.5em;
+  font-family: "Alex Brush";
+  font-weight: 400;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 3.75em;
+  }
+}
+
+.hp-section {
   color: #FFF;
   font-size: 1.75em;
+  background-size: cover;
+  background-position: center center;
 
   h2 {
-    //text-transform: uppercase;
-    //letter-spacing: -1px;
+    @extend h1;
     padding-top: 160px;
-    font-size: 3.75em;
-    font-family: "Alex Brush";
-    font-weight: 400;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  .hp-section-button {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    color: $brand-primary;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    background: $grey-200;
+    border-radius: 3px;
+    transition: all $transition-timing $transition-easing;
+    @include BoxShadowHelper(2);
+
+    &:hover {
+      background: $grey-50;
+      text-decoration: none;
+      transform: translateY(-2px);
+      @include BoxShadowHelper(3);
+    }
+
+    &:focus {
+      text-decoration: none;
+      background: #FFF;
+    }
   }
 }
 
@@ -113,32 +105,6 @@
     p {
       text-align: left;
     }
-
-    .hp-section-hero-button {
-      display: inline-block;
-      margin: 0 auto;
-      font-size: 0.7em;
-      padding: 0.5em 1em;
-      color: #FFF;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      background: $color-hlc;
-      border-radius: 3px;
-      transition: all $transition-timing $transition-easing;
-      @include BoxShadowHelper(2);
-
-      &:hover {
-        background: lighten($color-hlc, 7%);
-        text-decoration: none;
-        transform: translateY(-2px);
-        @include BoxShadowHelper(3);
-      }
-
-      &:focus {
-        text-decoration: none;
-        background: ligten($color-hlc, 14%);
-      }
-    }
   }
 }
 
@@ -171,7 +137,39 @@
     background: rgba($color-housing, 0.8);
   }
 
-.hp-section-contact {
+.hp-section#contact {
   background: #eceff1;
   color: #424242;
+}
+
+.fb_iframe_widget {
+  margin: 1em 0;
+}
+
+@mixin MainLinkStyle($color, $amount: 25%){
+  $color-light: mix($color, #FFF, $amount);
+  cursor: pointer;
+  border-bottom: 1px solid $color-light;
+  box-shadow: inset 0 -4px 0 $color-light;
+  color: inherit;
+  transition: background .15s cubic-bezier(.33,.66,.66,1);
+
+  &:hover, &:focus, &:active {
+    background: $color-light;
+    text-decoration: none;
+  }
+}
+
+.main a {
+  @include MainLinkStyle($brand-primary);
+
+  .health-and-living-center & {
+    @include MainLinkStyle($color-hlc);
+  }
+  .transitional-housing & {
+    @include MainLinkStyle($color-housing);
+  }
+  .shelter & {
+    @include MainLinkStyle($color-shelter);
+  }
 }
