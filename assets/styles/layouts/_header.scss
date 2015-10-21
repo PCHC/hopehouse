@@ -36,12 +36,23 @@
 .navbar-default .nav {
   > li {
     > a {
-      font-size: 20px;
+      font-size: 18px;
+      padding-left: 10px;
+      padding-right: 10px;
       text-transform: uppercase;
       transition: color $transition-timing $transition-easing;
 
-      @media (min-width: $screen-sm-min) {
+      @media (max-width: $screen-lg) {
+        font-size: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
 
+      @media (min-width: $screen-sm-min) and (max-width: $screen-md) {
+        font-size: 15px;
+        max-width: 7em;
+        text-align: center;
+        padding: 10px;
       }
 
       .navbar-default & {

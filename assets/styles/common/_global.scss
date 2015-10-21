@@ -10,6 +10,7 @@ body {
 
   .hp-section-image {
     max-width: 100%;
+    height: auto;
     border: 2px solid #FFF;
     @include BoxShadowHelper(2);
   }
