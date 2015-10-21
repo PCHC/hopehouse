@@ -48,11 +48,3 @@ function main_menu_links( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', __NAMESPACE__ . '\\main_menu_links', 10, 3 );
-
-/**
- * WooCommerce support declaration
- */
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
-add_action( 'after_setup_theme', 'woocommerce_support' );

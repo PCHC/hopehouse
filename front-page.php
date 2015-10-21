@@ -1,8 +1,8 @@
 <?php
 // WP_Query arguments
-$post_array = (WP_ENV == 'development') ? array( 10, 15, 16, 17 ) : array( 4, 6, 8, 10 );
 $args = array (
-	'post__in'               => $post_array,
+	'meta_key'               => 'show_on_front_page',
+	'meta_value'             => true,
 	'post_type'              => array( 'page' ),
 	'order'                  => 'ASC',
 	'orderby'                => 'menu_order',
