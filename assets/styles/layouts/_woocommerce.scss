@@ -1,0 +1,42 @@
+.woocommerce {
+  .main {
+    font-size: 1.25em;
+  }
+
+  .wrap.container {
+    margin-top: 8em;
+  }
+
+  h1 {
+    @extend .page-header;
+  }
+
+  #respond input#submit.alt,
+  a.button.alt,
+  button.button.alt,
+  input.button.alt {
+    background-color: $brand-primary;
+    transition: background-color $transition-timing $transition-easing;
+
+    &:hover {
+      background-color: mix($brand-primary, #FFF, 70%);
+    }
+  }
+
+  .woocommerce-message {
+    $woocommerce-message-color: mix($brand-primary, #FFF, 50%);
+    border-top-color: $woocommerce-message-color;
+    &:before {
+      color: $woocommerce-message-color;
+    }
+  }
+
+  .select2-choice {
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+
+    &:hover {
+      background: #FFF;
+    }
+  }
+}
