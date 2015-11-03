@@ -15,7 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'woocommerce_email_header', $email_heading ); ?>
 
-<p><?php printf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
+<p><?php _e("Thank you for your generous support of the Hope House. Your support will help the Hope House Health and Living Center raise the final dollars to complete critical facility renovations in the comprehensive shelter, health center, and transitional housing units.", 'woocommerce' ); ?></p>
+
+<p><?php _e("Your purchase is tax-deductible.  PCHC is a 501(c)3 tax-exempt nonprofit organization. All donations for which you received no goods or services may be 100% tax-deductible. PCHC’s tax-exemption number is 01-0514750.  We will send you a letter detailing your donation for tax purposes.", 'woocommerce' ); ?></p>
+
+<p><?php _e("If you have questions, please contact Sarah Dubay at sdubay@pchc.com or 207-992-9200 ext 1402.", 'woocommerce' ); ?></p>
+
+<p><?php printf( __( "Your order details are shown below for your reference:", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
 
 <?php do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text ); ?>
 
