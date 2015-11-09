@@ -17,7 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <p><?php _e("Thank you for your generous support of the Hope House. Your support will help the Hope House Health and Living Center raise the final dollars to complete critical facility renovations in the comprehensive shelter, health center, and transitional housing units.", 'woocommerce' ); ?></p>
 
-<p><?php _e("Your purchase is tax-deductible.  PCHC is a 501(c)3 tax-exempt nonprofit organization. All donations for which you received no goods or services may be tax-deductible. We will send you a letter detailing your donation for tax purposes.", 'woocommerce' ); ?></p>
+<p><?php _e("Your purchase is tax-deductible.  PCHC is a 501(c)3 tax-exempt nonprofit organization. All donations for which you received no goods or services may be 100% tax-deductible. PCHC’s tax-exemption number is 01-0514750.", 'woocommerce' ); ?><br>
+<em><?php _e("If you have purchased tickets, each ticket provides a meal and drink valued at $40.", 'woocommerce'); ?></em></p>
 
 <p><?php _e("If you have questions, please contact Sarah Dubay at sdubay@pchc.com or 207-992-9200 ext 1402.", 'woocommerce' ); ?></p>
 
